@@ -59,10 +59,6 @@ class HomeScreen extends StatelessWidget {
                     'https://expresstours.files.wordpress.com/2015/07/minion.jpg'),
                 height: 40,
               ),
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => LoginPage()));
-              },
             ),
             const Divider(
               height: 10,
@@ -70,22 +66,6 @@ class HomeScreen extends StatelessWidget {
               indent: 20,
               endIndent: 0,
               color: Colors.amber,
-            ),
-            ListTile(
-              title: const Text('Login'),
-              leading: Icon(Icons.account_box),
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => LoginPage()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.key_rounded),
-              title: const Text('Register'),
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => RegisterScreen()));
-              },
             ),
             ListTile(
               leading: Icon(Icons.album),

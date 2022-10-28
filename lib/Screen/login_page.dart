@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:photo_map/Component/loading_screen.dart';
+import 'register_screen.dart';
 
 class LoginPage extends StatelessWidget {
   final email = TextEditingController();
@@ -137,12 +138,21 @@ class LoginPage extends StatelessWidget {
                   'Not a member?',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  ' Register Now',
-                  style: TextStyle(
-                      color: Colors.blue[500], fontWeight: FontWeight.bold),
+                TextButton(
+                  child: Text(
+                    ' Register Now',
+                    style: TextStyle(
+                        color: Colors.blue[500], fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => RegisterScreen()));
+                  },
                 )
               ],
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
@@ -183,7 +193,7 @@ class LoginPage extends StatelessWidget {
       Navigator.pop(context, 'Cancel');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-            backgroundColor: Colors.amber,
+            backgroundColor: Colors.redAccent,
             content:
                 Text('Sai tài khoản hoặc mật khẩu! Vui lòng kiểm tra lại')),
       );
